@@ -1,0 +1,30 @@
+
+
+
+
+.tabelaEstoque{
+    width: 50%;
+    height: 20%;
+    border-collapse: collapse;
+    margin: 200px auto 0 auto;
+    background-color: #D9D9D9;
+}
+
+.tabelaEstoque th, .tabelaEstoque td {
+    text-align: center;
+    padding: 8px;
+}
+
+.tabelaEstoque th{
+     border: none;
+    background-color: #FF7700;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+
+.tabelaEstoque td{
+    font-family: 'Inter', sans-serif;
+    color: #FF7700;
+    font-size: 27px;
+}
