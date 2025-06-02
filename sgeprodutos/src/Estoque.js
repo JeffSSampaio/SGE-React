@@ -1,4 +1,4 @@
-import'./Estoque.css'
+import'./Tabela_estoque.css'
 
 function Estoque() {
   return(
