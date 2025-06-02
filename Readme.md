@@ -1,5 +1,5 @@
 # Sistema de Gestão de Estoque (SGE)
-- Meiryelle Gusmão Macedo npm
+- Meiryelle Gusmão Macedo 
 - Henrique Augusto Santos Matos
 - Jefferson Sousa Sampaio Júnior
 - Matheus Tarcio Oliveira da Penha
