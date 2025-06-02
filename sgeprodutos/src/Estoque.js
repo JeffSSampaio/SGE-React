@@ -1,9 +1,12 @@
 import'./Tabela_estoque.css'
+import'./estoque.css'
 
 function Estoque() {
   return(
-    <div>
+    <div className='bodyEstoque'>
+     <h1>Estoque</h1>
      <table className='tabelaEstoque'>
+      
       <thead>
         <th>ID</th>
         <th>Produto</th>
@@ -14,10 +17,17 @@ function Estoque() {
       <tbody>
         <tr>    {/* Teste */}       
           <td>1</td>
-          <td>maçã</td>
+          <td>Maçã</td>
           <td>20</td>
           <td>kg</td>
           <td>22345525564</td>
+        </tr>
+          <tr>    {/* Teste */}       
+          <td>2</td>
+          <td>Banana</td>
+          <td>4</td>
+          <td>kg</td>
+          <td>525234564</td>
         </tr>
       </tbody>
      </table>

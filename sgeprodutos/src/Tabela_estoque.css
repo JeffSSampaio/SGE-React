@@ -1,22 +1,23 @@
-
-
-
+/* Arquivo CSS para estilização da tabela de estoque */
 
 .tabelaEstoque{
     width: 50%;
     height: 20%;
     border-collapse: collapse;
-    margin: 200px auto 0 auto;
+    margin: 10px auto 0 auto;
     background-color: #D9D9D9;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.514);
+
 }
 
 .tabelaEstoque th, .tabelaEstoque td {
     text-align: center;
-    padding: 8px;
+    padding: 20px;
+
 }
 
 .tabelaEstoque th{
-     border: none;
+    border-bottom: none;
     background-color: #FF7700;
     font-family: 'Inter', sans-serif;
     color: white;
@@ -27,4 +28,5 @@
     font-family: 'Inter', sans-serif;
     color: #FF7700;
     font-size: 27px;
+    
 }
