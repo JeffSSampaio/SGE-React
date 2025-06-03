@@ -1,11 +1,4 @@
 
-.bodyEstoque h1{
-    font-family: 'Inter', sans-serif;
-    color: #FF7700;
-    font-size: 40px;
-    text-align: center;
-}
-
 .headerEstoque  {
     background-color: #FF7700;
     padding-left: 10px;
@@ -17,9 +10,43 @@
     margin-left: 20px;
     padding-top: 20px;
 }
+
 .containerEstoque {
-    display: flex;
+    width: 60%;           
+    margin: 30px auto 0 auto; 
+   /* display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  */
+}
+
+.containerEstoque .tituloTabela {
+    text-align: left;   
+    font-family: 'Inter', sans-serif;
+    color: #FF7700;
+    font-size: 40px;
+  
+}
+
+.butaoaddprod{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.butaoaddprod img{
+    background-color: #FF7700;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.514);
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.containerTituloEstoque{
+     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

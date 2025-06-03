@@ -2,7 +2,6 @@ import'./Tabela_estoque.css'
 
 function TabelaEstoque(){
     return(
-     <div className='containerEstoque'>  
      <table className='tabelaEstoque'>
       <thead>
         <th>ID</th>
@@ -28,7 +27,6 @@ function TabelaEstoque(){
         </tr>
       </tbody>
      </table>
-     </div>
     )
 }
 export default TabelaEstoque;

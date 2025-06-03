@@ -1,20 +1,27 @@
 import TabelaEstoque from './TabelaEstoque';
 import'./Tabela_estoque.css'
+import CabecalhoEstoque from './cabecalhoEstoque';
 import'./estoque.css'
-import logo from './logoSgeProdutoLaranja.svg'
-
+import imgAdd from './imgs/imgAddProd.svg'
 function Estoque() {
   return(
   
     <div className='bodyEstoque'>
-      <header className='headerEstoque'>
-        <img src={logo} alt="Logo SGE Produtos" className='logoSgeProdutos'/>
-      </header>
+ 
+     <CabecalhoEstoque></CabecalhoEstoque>
      
-      <h1> Estoque </h1>
+    <div className='containerEstoque'>
+      <div className='containerTituloEstoque'>
+      <h1 className='tituloTabela'> Estoque </h1>
+      <button className='butaoaddprod' > 
+      <img src={imgAdd} alt='adicionar produto'></img>  
+      </button>
+      </div>
       <TabelaEstoque></TabelaEstoque>
      
-      
+    </div>
+
+     
     </div>
    
   )
