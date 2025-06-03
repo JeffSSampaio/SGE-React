@@ -1,5 +1,5 @@
-import'./estoque.css'
-import logo from './imgs/logoSgeProdutoLaranja.svg'
+import'./cssestoque/estoque.css'
+import logo from '../imgs/logoSgeProdutoLaranja.svg'
 
 function CabecalhoEstoque() {
     return (

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Estoque from './Estoque';
-import Login from './Login';
+import Estoque from '../estoque_route/Estoque';
+import Login from '../login_route/Login';
 import './App.css';
 
 function App() {

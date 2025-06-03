@@ -1,8 +1,7 @@
 import TabelaEstoque from './TabelaEstoque';
-import'./Tabela_estoque.css'
+import'./cssestoque/estoque.css'
 import CabecalhoEstoque from './cabecalhoEstoque';
-import'./estoque.css'
-import imgAdd from './imgs/imgAddProd.svg'
+import imgAdd from '../imgs/imgAddProd.svg'
 function Estoque() {
   return(
   
