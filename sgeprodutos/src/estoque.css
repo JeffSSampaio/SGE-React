@@ -1,10 +1,25 @@
 
-
-
 .bodyEstoque h1{
     font-family: 'Inter', sans-serif;
     color: #FF7700;
     font-size: 40px;
     text-align: center;
+}
 
+.headerEstoque  {
+    background-color: #FF7700;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.logoSgeProdutos{
+    width: 200px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+.containerEstoque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
