@@ -51,7 +51,8 @@ body{
     transition: 
         transform 1s ease-in,
         background-color 1s ease-in,
-        box-shadow 1s ease-in;
+        box-shadow 1s ease-in,
+        filter 1s ease-in;
     ;
 }
 
@@ -59,7 +60,7 @@ body{
     transform:  scale(0.9);
     background-color: #ac5a11;
     box-shadow: 0 0 20px 8px #FF7700, 0 0 40px 16px #FF770088;
-
+    filter: brightness(0.9);
 }
 
 .containerTituloEstoque{
