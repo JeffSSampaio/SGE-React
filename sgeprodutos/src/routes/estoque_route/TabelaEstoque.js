@@ -1,5 +1,6 @@
 import'./cssestoque/Tabela_estoque.css'
-
+import editIcon from '../imgs/imgeditProd.svg'
+import deleteIcon from '../imgs/imgdelProd.svg'
 function TabelaEstoque(){
     return(
      <table className='tabelaEstoque'>
@@ -17,13 +18,11 @@ function TabelaEstoque(){
           <td>20</td>
           <td>kg</td>
           <td>22345525564</td>
-        </tr>
-          <tr>    {/* Teste */}       
-          <td>2</td>
-          <td>Banana</td>
-          <td>4</td>
-          <td>kg</td>
-          <td>525234564</td>
+          
+          <td className='acoesTabela'>
+            <button className="btnAcaoTabela  btneditarProd"><img src={editIcon} alt="Editar" /></button>
+            <button className="btnAcaoTabela  btndelProd"><img src={deleteIcon} alt="Excluir" /></button>
+          </td>
         </tr>
       </tbody>
      </table>
