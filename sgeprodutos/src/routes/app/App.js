@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 import Estoque from '../estoque_route/Estoque';
 import Login from '../login_route/Login';
 import './App.css';
@@ -10,8 +10,9 @@ function App() {
    <Router>
 
     <Routes>
-    <Route path="/" element={<Login/>}/>
-    <Route path="/estoque" element={<Estoque/>}/>
+    <Route path="/" element={ <Navigate to='/sgeprodutos/login' replace/>}/>
+    <Route path="/sgeprodutos/login" element={<Login/>}/>
+    <Route path="/sgeprodutos/estoque" element={<Estoque/>}/>
     </Routes>
 
    </Router>
