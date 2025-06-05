@@ -56,5 +56,14 @@
     filter: brightness(0.9);
     cursor: pointer;
 }
+.tabelaEstoque td.acoesTabela {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: transparent;
+}
+
 
 
