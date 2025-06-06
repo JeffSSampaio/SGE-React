@@ -7,7 +7,6 @@ Trabalho para Segunda Avaliação 2025.1 de Programação Front-end
 - Jefferson Sousa Sampaio Júnior
 - Henrique Augusto Santos Matos
 - Matheus Tarcio Oliveira da Penha
-
 # Recursos
 - HTML,CSS, JavaScript : estruturação,estilização e Interatividade das páginas
 - REACT: framework 
