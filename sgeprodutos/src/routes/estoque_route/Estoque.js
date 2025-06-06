@@ -33,6 +33,7 @@ function Estoque() {
     setModo(null);
   };
 
+
   const salvarProduto = async (dados) => {
     try {
       if (modo === 'editar') {
