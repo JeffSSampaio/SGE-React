@@ -1,0 +1,108 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.headerEstoque {
+    background-color: #FF7700;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+.logoSgeProdutos{
+    width: 200px;
+    padding-top: 0;
+    
+}
+
+.containerEstoque {
+    width: 60%;           
+    margin: 30px auto 0 auto; 
+   /* display: flex;
+    flex-direction: column;
+  */
+}
+
+.containerEstoque .tituloTabela {
+    text-align: left;   
+    font-family: 'Inter', sans-serif;
+    color: #FF7700;
+    font-size: 40px;
+  
+}
+
+.linhaSuperior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+
+.butaoaddprod{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.butaoaddprod img{
+    background-color: #FF7700;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.514);
+    width: 30px;
+    height: 30px;
+    transition: 
+        transform 1s ease-in,
+        background-color 1s ease-in,
+        box-shadow 1s ease-in,
+        filter 1s ease-in;
+    ;
+}
+
+.butaoaddprod img:hover{
+    transform:  scale(0.9);
+    background-color: #ac5a11;
+    box-shadow: 0 0 20px 8px #FF7700, 0 0 40px 16px #FF770088;
+    filter: brightness(0.9);
+}
+
+
+
+.butaoCsv{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.butaoCsv img{
+    background-color: #FF7700;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.514);
+    width: 30px;
+    height: 30px;
+    transition: 
+        transform 1s ease-in,
+        background-color 1s ease-in,
+        box-shadow 1s ease-in,
+        filter 1s ease-in;
+    ;
+}
+
+.butaoCsv img:hover{
+    transform:  scale(0.9);
+    background-color: #ac5a11;
+    box-shadow: 0 0 20px 8px #FF7700, 0 0 40px 16px #FF770088;
+    filter: brightness(0.9);
+}
+
+.botoesSuperiores{   
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+

@@ -1,0 +1,72 @@
+/* Arquivo CSS para estilização da tabela de estoque */
+
+.tabelaEstoque{
+    width: 100%;
+    border-collapse: collapse;
+   
+}
+
+.tabelaEstoque table{
+    margin: 20px auto 0 auto;
+}
+
+.tabelaEstoque th, .tabelaEstoque td {
+    text-align: center;
+    padding: 10px;
+       
+}
+
+.tabelaEstoque th{
+    border-bottom: none;
+    background-color: #FF7700;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+
+.tabelaEstoque td{
+    font-family: 'Inter', sans-serif;
+    color: #FF7700;
+    font-size: 27px;
+    background-color: rgb(218, 216, 216);
+}
+
+/*Butão  */
+
+.tabelaEstoque td.acoesTabela{
+ background: transparent !important;
+ padding: 0;
+ box-shadow: none !important;
+}
+
+.btnAcaoTabela{
+    background:#FF7700;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.514);
+    transition: 
+        transform 1s ease-in,
+        background-color 1s ease-in,
+        box-shadow 1s ease-in,
+        filter 1s ease-in;
+    ;
+}
+.btnAcaoTabela:hover{
+    transform:  scale(0.9);
+    background-color: #ac5a11;
+    box-shadow: 0 0 20px 8px #FF7700, 0 0 40px 16px #FF770088;
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+.tabelaEstoque td.acoesTabela {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: transparent;
+}
+
+
+
