@@ -46,15 +46,6 @@ function ModalProduto({ produto, onSalvar, onFechar }) {
       return;
     }
 
-    const codigoExistente = produto.some(
-      (p) => p.codigoBarras === form.codigoBarras && p.id !== form.id 
-     );
-
-     if(codigoExistente){
-      alert("Já existe um produto com esse código de barras !");
-      return;
-     }
-
     onSalvar({ ...form, quantidade: parseInt(form.quantidade) });
   };
 
