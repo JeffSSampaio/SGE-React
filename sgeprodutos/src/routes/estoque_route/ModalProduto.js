@@ -41,10 +41,6 @@ function ModalProduto({ produto, onSalvar, onFechar }) {
       alert("Preencha todos os campos!");
       return;
     }
-    if (form.codigoBarras.length !== 8) {
-      alert("Código de barras deve ter Extamente 8 numeros!");
-      return;
-    }
 
     onSalvar({ ...form, quantidade: parseInt(form.quantidade) });
   };

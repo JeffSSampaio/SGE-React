@@ -2,10 +2,7 @@ import './cssestoque/Tabela_estoque.css';
 import editIcon from '../imgs/imgeditProd.svg';
 import deleteIcon from '../imgs/imgdelProd.svg';
 
-
 function TabelaEstoque({ produtos, onEditar, onDeletar }) {
-  const produtosOrdenados = [...produtos].sort((a, b) => a.id - b.id);
-  
   return (
     <table className='tabelaEstoque'>
       <thead>
@@ -21,9 +18,9 @@ function TabelaEstoque({ produtos, onEditar, onDeletar }) {
         {produtos.map((produto) => (
           <tr key={produto.id}>
             <td>{produto.id}</td>
-            <td>{produto.nome.toUpperCase()}</td>
+            <td>{produto.nome}</td>
             <td>{produto.quantidade}</td>
-            <td>{produto.unidade.toUpperCase()}</td>
+            <td>{produto.unidade}</td>
             <td>{produto.codigoBarras}</td>
             <td className='acoesTabela'>
               <button className="btnAcaoTabela btneditarProd" onClick={() => onEditar(produto)}>
