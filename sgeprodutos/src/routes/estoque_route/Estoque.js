@@ -40,7 +40,11 @@ function Estoque() {
     if (modo === 'editar') {
       setProdutos(produtos.map(p => p.id === dados.id ? dados : p));
     } else {
-      const novo = { ...dados, id: Date.now() };
+      let id = 1;
+      if(produtos.length > 0){
+        id = Math.max(...produtos.map(p => Number(p.id))) + 1;
+      }
+      const novo = { ...dados, id: id };
       setProdutos([...produtos, novo]);
     }
     fecharModal();
