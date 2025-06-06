@@ -20,7 +20,8 @@ body{
 
 .containerEstoque {
     width: 60%;           
-    margin: 30px auto 0 auto; 
+    margin: 9px auto 0 auto; 
+    padding: 40px;
    /* display: flex;
     flex-direction: column;
   */
@@ -39,6 +40,7 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px; 
+    margin-right: 170px;
 }
 
 
@@ -100,9 +102,22 @@ body{
     filter: brightness(0.9);
 }
 
-.botoesSuperiores{   
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 100px;
+
+
+@media  (min-width:1102px ) ,(max-width: 700px  ){
+    .containerEstoque {
+        width: 80%;
+    }
+    .linhaSuperior {
+         margin-right: 700px;
+    }
+    .containerEstoque .tituloTabela {
+        font-size: 32px;
+    }
 }
 
+@media  (min-width:539px),( max-width:771px) {
+    .linhaSuperior{
+        margin-right: 215px;
+    }
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { produtosService } from '../../services/produtosService';
 import ModalProduto from './ModalProduto';
 import CabecalhoEstoque from './cabecalhoEstoque';
 import TabelaEstoque from './TabelaEstoque';
@@ -7,19 +8,15 @@ import './cssestoque/estoque.css';
 import exportImg from '../imgs/botaoRell.svg'
 
 function Estoque() {
-  // Carrega o estado inicial do localStorage
-  const [produtos, setProdutos] = useState(() => {
-    const produtosSalvos = localStorage.getItem("estoque");
-    return produtosSalvos ? JSON.parse(produtosSalvos) : [];
-  });
-
+  const [produtos, setProdutos] = useState([]);
   const [produtoEditando, setProdutoEditando] = useState(null);
   const [modo, setModo] = useState(null); // 'editar' ou 'adicionar'
 
-  // Salva a lista no localStorage sempre que 'produtos' mudar
   useEffect(() => {
-    localStorage.setItem("estoque", JSON.stringify(produtos));
-  }, [produtos]);
+    // Escuta em tempo real a coleção de produtos (já ordenada por id)
+    const unsubscribe = produtosService.ouvirTodos(setProdutos);
+    return () => unsubscribe(); // cleanup ao desmontar
+  }, []);
 
   const abrirModalEditar = (produto) => {
     setProdutoEditando(produto);
@@ -36,48 +33,63 @@ function Estoque() {
     setModo(null);
   };
 
-  const salvarProduto = (dados) => {
-    if (modo === 'editar') {
-      setProdutos(produtos.map(p => p.id === dados.id ? dados : p));
-    } else {
-      const novo = { ...dados, id: Date.now() };
-      setProdutos([...produtos, novo]);
+
+  const salvarProduto = async (dados) => {
+    try {
+      if (modo === 'editar') {
+        await produtosService.atualizar(dados.id, dados);
+        alert("Produto atualizado com sucesso!");
+      } else {
+        await produtosService.adicionar(dados);
+        alert("Produto adicionado com sucesso!");
+      }
+      fecharModal();
+    } catch (error) {
+      console.error("Erro ao salvar produto:", error);
+      alert("Erro ao salvar produto. Tente novamente.");
     }
-    fecharModal();
   };
 
-  const deletarProduto = (id) => {
+  const deletarProduto = async (id) => {
     const confirmado = window.confirm("Tem certeza que deseja excluir este produto?");
     if (confirmado) {
-      setProdutos(produtos.filter(p => p.id !== id));
+      try {
+        await produtosService.deletar(id);
+        alert("Produto excluído com sucesso!");
+      } catch (error) {
+        console.error("Erro ao excluir produto:", error);
+        alert("Erro ao excluir produto. Tente novamente.");
+      }
     }
   };
 
   function exportarCSV() {
-  if (!produtos.length) {
-    alert("Nenhum produto para exportar!");
-    return;
-  }
-  const confirmarExportacao = window.confirm("Tem certeza que quer exportar o relatório do estoque?")
-if(confirmarExportacao){ 
-  const header = ["ID", "Nome", "Quantidade", "Unidade", "Código de Barras"];
-  const linhas = produtos.map(p =>
-    [p.id, p.nome, p.quantidade, p.unidade, p.codigoBarras].join(",")
-  );
-  const csvContent = [header.join(","), ...linhas].join("\n");
+    if (!produtos.length) {
+      alert("Nenhum produto para exportar!");
+      return;
+    }
 
-  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-  const url = URL.createObjectURL(blob);
+    const confirmarExportacao = window.confirm("Tem certeza que quer exportar o relatório do estoque?");
+    if (confirmarExportacao) { 
+      const header = ["ID", "Nome", "Quantidade", "Unidade", "Código de Barras"];
+      const linhas = produtos.map(p =>
+        [p.id, p.nome, p.quantidade, p.unidade, p.codigoBarras].join(",")
+      );
+      const csvContent = [header.join(","), ...linhas].join("\n");
 
-  const link = document.createElement("a");
-  link.href = url;
-  link.setAttribute("download", "Relatório-estoque-sgeprodutos.csv");
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "Relatório-estoque-sgeprodutos.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
   }
-}
+
   return (
     <div className='bodyEstoque'>
       <CabecalhoEstoque />
@@ -93,21 +105,10 @@ if(confirmarExportacao){
             </button>
           </div>
         </div>
-
-        <TabelaEstoque
-          produtos={produtos}
-          onEditar={abrirModalEditar}
-          onDeletar={deletarProduto}
-        />
+        <TabelaEstoque produtos={produtos} onEditar={abrirModalEditar} onDeletar={deletarProduto} />
       </div>
 
-      {modo && (
-        <ModalProduto
-          produto={produtoEditando}
-          onSalvar={salvarProduto}
-          onFechar={fecharModal}
-        />
-      )}
+      {modo && <ModalProduto produto={produtoEditando} onSalvar={salvarProduto} onFechar={fecharModal} />}
     </div>
   );
 }
