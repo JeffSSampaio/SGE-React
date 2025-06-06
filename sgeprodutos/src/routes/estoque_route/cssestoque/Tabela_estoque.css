@@ -6,9 +6,13 @@
    
 }
 
+.tabelaEstoque table{
+    margin: 20px auto 0 auto;
+}
+
 .tabelaEstoque th, .tabelaEstoque td {
     text-align: center;
-    padding: 25px;
+    padding: 10px;
        
 }
 
@@ -38,7 +42,6 @@
 .btnAcaoTabela{
     background:#FF7700;
     border: none;
-    margin: 0 5px;
     border-radius: 10px;
     padding: 10px 15px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.514);
