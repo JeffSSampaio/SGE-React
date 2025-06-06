@@ -18,9 +18,9 @@ function TabelaEstoque({ produtos, onEditar, onDeletar }) {
         {produtos.map((produto) => (
           <tr key={produto.id}>
             <td>{produto.id}</td>
-            <td>{produto.nome}</td>
+            <td>{produto.nome.toUpperCase()}</td>
             <td>{produto.quantidade}</td>
-            <td>{produto.unidade}</td>
+            <td>{produto.unidade.toUpperCase()}</td>
             <td>{produto.codigoBarras}</td>
             <td className='acoesTabela'>
               <button className="btnAcaoTabela btneditarProd" onClick={() => onEditar(produto)}>
