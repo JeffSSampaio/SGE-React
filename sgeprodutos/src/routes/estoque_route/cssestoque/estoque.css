@@ -103,6 +103,18 @@ body{
 .botoesSuperiores{   
     display: flex;
     justify-content: flex-end;
-    margin-right: 100px;
+    margin-right: 130px;
+  
 }
 
+@media (max-width: 1922px  ) {
+    .containerEstoque {
+        width: 80%;
+    }
+    .botoesSuperiores {
+        margin-right: 200px;
+    }
+    .containerEstoque .tituloTabela {
+        font-size: 32px;
+    }
+}
