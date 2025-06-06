@@ -2,7 +2,10 @@ import './cssestoque/Tabela_estoque.css';
 import editIcon from '../imgs/imgeditProd.svg';
 import deleteIcon from '../imgs/imgdelProd.svg';
 
+
 function TabelaEstoque({ produtos, onEditar, onDeletar }) {
+  const produtosOrdenados = [...produtos].sort((a, b) => a.id - b.id);
+  
   return (
     <table className='tabelaEstoque'>
       <thead>
