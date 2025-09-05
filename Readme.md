@@ -1,7 +1,4 @@
 # Sistema de Gestão de Estoque (SGE)
-Trabalho para Segunda Avaliação 2025.1 de Programação Front-end
-## Docente
-- Dadilton Bastos Melo
 ## Participantes
 - Meiryelle Gusmão Macedo 
 - Jefferson Sousa Sampaio Júnior
